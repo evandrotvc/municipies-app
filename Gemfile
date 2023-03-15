@@ -46,6 +46,7 @@ gem 'devise'
 gem 'rack-cors'
 
 # gem 'rspec-rails'
+gem 'dotenv-rails', '~> 2.7.6'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

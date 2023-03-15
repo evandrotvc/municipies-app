@@ -106,6 +106,10 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.12.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -307,6 +311,7 @@ DEPENDENCIES
   database_cleaner-active_record (~> 2.0.1)
   debug
   devise
+  dotenv-rails (~> 2.7.6)
   factory_bot_rails (~> 6.2.0)
   faker (~> 2.21.0)
   importmap-rails
