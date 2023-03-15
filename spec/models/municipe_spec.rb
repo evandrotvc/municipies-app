@@ -12,8 +12,10 @@ RSpec.describe Municipe do
   it { is_expected.to validate_presence_of(:birth_date) }
   it { is_expected.to validate_presence_of(:phone) }
   it { is_expected.to validate_presence_of(:status) }
+  it { is_expected.to validate_presence_of(:photo) }
 
   it { is_expected.to validate_length_of(:name).is_at_least(3) }
+  it { is_expected.to have_one_attached(:photo) }
 
   it { is_expected.to define_enum_for(:status).with_values(active: 0, inactive: 1) }
 

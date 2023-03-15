@@ -9,5 +9,6 @@ FactoryBot.define do
     birth_date { Faker::Date.birthday(min_age: 1, max_age: 100) }
     phone { '+55 (61) 98455-4529' }
     status { :active }
+    photo { Rack::Test::UploadedFile.new(Rails.root.join('spec/support/images/municipe.jpg'), 'image/jpeg') }
   end
 end
