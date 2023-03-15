@@ -46,6 +46,8 @@ gem 'devise'
 gem 'rack-cors'
 
 # gem 'rspec-rails'
+gem 'active_storage_validations'
+gem 'cpf_cnpj', '~> 0.5.0'
 gem 'dotenv-rails', '~> 2.7.6'
 
 # Use Sass to process CSS
