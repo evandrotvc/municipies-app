@@ -15,4 +15,13 @@ RSpec.describe Address do
     describe 'relations' do
         it { is_expected.to belong_to(:municipe) }
     end
+
+    describe 'address create' do
+        let!(:municipe) { create(:municipe) }
+        subject(:address) { build(:address, municipe: municipe) }
+    
+        before { address.save }
+    
+        it { is_expected.to be_persisted }
+      end
 end

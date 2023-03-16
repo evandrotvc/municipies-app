@@ -3,9 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe Municipe do
-  subject(:municipe) { described_class.new }
 
   describe 'validations' do
+    subject(:municipe) { described_class.new }
+
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:cpf) }
     it { is_expected.to validate_presence_of(:cns) }
@@ -46,5 +47,13 @@ RSpec.describe Municipe do
   describe 'relations' do
     it { is_expected.to have_one_attached(:photo) }
     it { is_expected.to have_one(:address) }
+  end
+
+  describe 'municipe create' do
+    subject(:municipe) { build(:municipe) }
+
+    before { municipe.save }
+
+    it { is_expected.to be_persisted }
   end
 end
