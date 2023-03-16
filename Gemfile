@@ -52,6 +52,10 @@ gem 'dotenv-rails', '~> 2.7.6'
 gem 'image_processing', '~> 1.2'
 gem 'simple_form', '~> 5.1.0'
 
+
+gem 'twilio-ruby'
+gem 'sidekiq', '~> 6.2.2'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
