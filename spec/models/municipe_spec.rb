@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe Municipe do
-
   describe 'validations' do
     subject(:municipe) { described_class.new }
 
@@ -15,7 +14,7 @@ RSpec.describe Municipe do
     it { is_expected.to validate_presence_of(:phone) }
     it { is_expected.to validate_presence_of(:status) }
     it { is_expected.to validate_presence_of(:photo) }
-  
+
     it { is_expected.to validate_length_of(:name).is_at_least(3) }
     it { is_expected.to define_enum_for(:status).with_values(active: 0, inactive: 1) }
 
@@ -24,19 +23,19 @@ RSpec.describe Municipe do
       municipe.validate
       expect(municipe.errors).to have_key(:cpf)
     end
-  
+
     it 'validates if :cns is valid' do
       municipe.cns = '12345000000'
       municipe.validate
       expect(municipe.errors).to have_key(:cns)
     end
-  
+
     it 'validates if :email is valid' do
       municipe.email = 'email'
       municipe.validate
       expect(municipe.errors).to have_key(:email)
     end
-  
+
     it 'validates if :birth_date is valid' do
       municipe.birth_date = Date.current + 1.year
       municipe.validate
