@@ -10,5 +10,6 @@ FactoryBot.define do
     phone { '+55 (61) 98455-4529' }
     status { :active }
     photo { Rack::Test::UploadedFile.new(Rails.root.join('spec/support/images/municipe.jpg'), 'image/jpeg') }
+    address { create(:address) }
   end
 end
