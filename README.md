@@ -48,7 +48,8 @@ rspec
 ## Examples
 - Mailer
 ![alt text](https://github.com/evandrotvc/municipies-app/blob/main/app/assets/images/mailer.png)
-- SMS
+
+- SMS (exemplo)
 ![alt text](https://github.com/evandrotvc/municipies-app/blob/main/app/assets/images/sms.jpeg)
 
 
