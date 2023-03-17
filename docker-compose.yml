@@ -79,3 +79,6 @@ volumes:
   postgres-data:
   redis-data:
   app:
+
+networks:
+  app:
