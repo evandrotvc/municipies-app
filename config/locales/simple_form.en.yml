@@ -23,7 +23,7 @@ pt-BR:
         name: Nome
         cpf: CPF
         cns: CNS
-        birth_date: Data de Nascimento
+        birth_date: Data de Nascimento(separar com /)
         email: E-mail
         photo: Foto
         status: Status

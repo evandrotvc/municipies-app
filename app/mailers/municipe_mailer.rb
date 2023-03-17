@@ -3,6 +3,7 @@
 class MunicipeMailer < ApplicationMailer
   def welcome
     @municipe = params[:municipe]
+
     mail(to: @municipe.email, subject: I18n.t('activerecord.messages.municipe.create.success'))
   end
 

@@ -4,7 +4,13 @@ class MunicipesController < ApplicationController
     before_action :set_municipe, only: %i[show edit update]
   
     def index
-      @municipes = Municipe.all
+      if params[:query].present?
+        query = params[:query].downcase
+        query = I18n.transliterate(query)
+        @municipes = Municipe.where('lower(unaccent(name)) ilike ?', "%#{query}%").ordered
+      else
+        @municipes = Municipe.order_by_name
+      end
     end
   
     def show; end
@@ -33,6 +39,7 @@ class MunicipesController < ApplicationController
     def update
       message = I18n.t('activerecord.messages.municipe.update.success')
       if @municipe.update(municipe_params)
+
         respond_to do |format|
           format.html { redirect_to municipes_path, notice: message, status: :ok }
           format.turbo_stream { flash.now[:notice] = message }

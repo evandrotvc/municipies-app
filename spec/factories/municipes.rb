@@ -7,7 +7,7 @@ FactoryBot.define do
     cns { '991619794940009' }
     email { Faker::Internet.email }
     birth_date { Faker::Date.birthday(min_age: 1, max_age: 100) }
-    phone { '+55 (61) 98455-4529' }
+    phone { '55 (88) 99778-7269' }
     status { :active }
     photo do
       Rack::Test::UploadedFile.new(Rails.root.join('spec/support/images/selfie.png'),
