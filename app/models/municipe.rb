@@ -11,13 +11,16 @@ class Municipe < ApplicationRecord
 
   scope :order_by_name, -> { order(:name) }
 
-  validates :name, :cpf, :cns, :email, :birth_date, :phone, :status, :photo,
+  validates :name, :cpf, :cns, :email, :birth_date, :status, :photo,
     presence: true
   validates :name, length: { minimum: 3 }
   validates :cpf, cpf: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :cns, cns: true
   validates :birth_date, pass_date: true
+  validates :phone, format: { with: /\A\d+\z/,
+                              message: 'Sem caracteres. Formato correto: 5561920304050' },
+    presence: true
 
   after_create :welcome_email
   after_save :information_updates_email
@@ -40,7 +43,7 @@ class Municipe < ApplicationRecord
   end
 
   def send_sms
-    TwilioMessenger.new("Olá, #{name}, seu cadastro foi criado/atualizado com sucesso!",
-      phone).call
+    # TwilioMessenger.new("Olá, #{name}, seu cadastro foi criado/atualizado com sucesso!",
+    #   phone).call
   end
 end

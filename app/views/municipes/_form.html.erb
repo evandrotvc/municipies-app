@@ -9,20 +9,20 @@
   <h1>Dados Pessoais</h1>
   <br>
   <div class="yui3-g">
-    <div class='yui3-u-1'>
-      <%= f.input :name, input_html: { autofocus: true } %>
+    <div class='form-group'>
+      <%= f.input :name, input_html: { autofocus: true }, class: "form-control" %>
     </div>
   </div>
   <div class="yui3-g">
-    <div class="yui3-u-1-4">
-      <%= f.input :cpf %>
+    <div class="form-group">
+      <%= f.input :cpf, class: "form-control" %>
     </div>
 
-    <div class="yui3-u-1-4">
-      <%= f.input :cns %>
+    <div class="form-group">
+      <%= f.input :cns, class: "form-control" %>
     </div>
 
-    <div class="yui3-u-1-5">
+    <div class="form-group">
       <% if municipe.persisted? %>
         <%= f.input :birth_date, as: :string, input_html: { value: municipe.br_birth_date } %>
       <% else %>
@@ -30,8 +30,8 @@
       <% end %>
     </div>
 
-    <div class="yui3-u-1-5">
-      <%= f.input :phone, as: :tel %>
+    <div class="form-group">
+      <%= f.input :phone, as: :tel, class: "form-control" %>
     </div>
 
     <div class="yui3-u-1-12" style="width: 10%">
@@ -41,7 +41,7 @@
 
   <div class="yui3-g">
     <div class="yui3-u-1-2">
-      <%= f.input :email, as: :email %>
+      <%= f.input :email, as: :email, class: "form-control" %>
     </div>
 
     <div class="yui3-u-1-2">
@@ -57,8 +57,8 @@
   <% end %>
 
   <br>
-  <%= link_to "Cancel",  municipes_path, class: "btn btn--light" %>
-  <%= f.submit class: "btn btn--secondary" %>
+  <%= link_to "Cancel",  municipes_path, class: "btn btn-danger" %>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>
 
 <script>

@@ -7,7 +7,8 @@ class MunicipesController < ApplicationController
     if params[:query].present?
       query = params[:query].downcase
       query = I18n.transliterate(query)
-      @municipes = Municipe.where('lower(unaccent(name)) ilike ?', "%#{query}%").order_by_name
+      @municipes = Municipe.where('lower(unaccent(name)) ilike ?',
+        "%#{query}%").order_by_name
     else
       @municipes = Municipe.order_by_name
     end
