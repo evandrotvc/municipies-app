@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_15_192822) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_17_185106) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -43,7 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_192822) do
   end
 
   create_table "addresses", force: :cascade do |t|
-    t.bigint "municipe_id", null: false
     t.string "zipcode", null: false
     t.string "street", null: false
     t.string "complement", null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_192822) do
     t.string "ibge_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "municipe_id", null: false
     t.index ["municipe_id"], name: "index_addresses_on_municipe_id"
   end
 
