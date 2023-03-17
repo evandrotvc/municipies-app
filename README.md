@@ -12,7 +12,7 @@ Para instalar o projeto, siga estas etapas:
 
 Setando o .env
 ```
-copie o arquivo .env-example com o nome .env
+copie o arquivo .env.test com o nome .env
 ```
 depois rode
 ```
@@ -34,7 +34,7 @@ e Rode:
 ```
 bundle exec sidekiq
 ```
-
+Agora é possível entrar no http://localhost:3000/ e realizar os testes se todos os containers executaram corretamente
 
 ## Tests
 
