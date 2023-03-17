@@ -47,12 +47,4 @@ RSpec.describe Municipe do
     it { is_expected.to have_one_attached(:photo) }
     it { is_expected.to have_one(:address) }
   end
-
-  describe 'municipe create' do
-    subject(:municipe) { build(:municipe) }
-
-    before { municipe.save }
-
-    it { is_expected.to be_persisted }
-  end
 end

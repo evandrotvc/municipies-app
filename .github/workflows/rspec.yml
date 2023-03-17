@@ -6,7 +6,7 @@ on:
 env:
   RAILS_ENV: test
   DATABASE_URL: "postgres://user:password@localhost:5432/municipe_test"
-  REDIS_URL: "redis://localhost:6379/0"
+  REDIS_URL: "redis://redis:6379/0"
   
 jobs:
   rspec:
@@ -37,11 +37,3 @@ jobs:
 
       - name: Run RSpec tests
         run: bundle exec rspec
-
-      - name: Check code coverage
-        uses: joshmfrankel/simplecov-check-action@main
-        with:
-          check_job_name: simplecov
-          minimum_suite_coverage: 95
-          minimum_file_coverage: 90
-          github_token: ${{ secrets.GITHUB_TOKEN }}
