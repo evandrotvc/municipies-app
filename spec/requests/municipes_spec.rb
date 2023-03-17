@@ -4,11 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'Municipies' do
   describe 'GET /municipies' do
-    let!(:municipes) { create_list(:municipe, 5) }
+    let!(:municipes) { create_list(:municipe, 3) }
     let(:request) { get municipes_path }
-    let(:do_request) do
-        get :index, params: { }
-    end
 
     before { request }
 
@@ -54,16 +51,10 @@ RSpec.describe 'Municipies' do
     let(:request) { post municipes_path, params: { municipe: municipe_params } }
 
     context 'when municipe is valid' do
-      before do
-        request
-      end
-
-      it 'returns http ok' do
+      let!(:municipes) { Municipe.all }
+      it 'returns http ok and creates municipe' do
+        expect { request }.to change(Municipe, :count).by(1)
         expect(response).to have_http_status(:ok)
-      end
-
-      it 'creates municipe' do
-        expect(Municipe.count).to eq(1)
       end
     end
 
