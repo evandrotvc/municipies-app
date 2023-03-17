@@ -24,7 +24,9 @@ class Municipe < ApplicationRecord
   after_save :send_sms
 
   def self.translated_statuses
-    statuses.keys.map { |status| [I18n.t("activerecord.attributes.municipe.statuses.#{status}"), status] }
+    statuses.keys.map do |status|
+      [I18n.t("activerecord.attributes.municipe.statuses.#{status}"), status]
+    end
   end
 
   private
@@ -38,6 +40,7 @@ class Municipe < ApplicationRecord
   end
 
   def send_sms
-    # TwilioMessenger.new("Olá, #{name}, seu cadastro foi criado/atualizado com sucesso!", phone).call
+    # TwilioMessenger.new("Olá, #{name}, seu cadastro foi criado/atualizado com sucesso!",
+    #   phone).call
   end
 end

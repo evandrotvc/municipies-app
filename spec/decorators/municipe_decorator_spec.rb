@@ -16,7 +16,7 @@ RSpec.describe MunicipeDecorator do
 
     context 'when birth_date is present' do
       let(:birth_date) { '2020-01-01' }
-      let(:municipe) { build(:municipe, birth_date: birth_date) }
+      let(:municipe) { build(:municipe, birth_date:) }
 
       it 'returns birth_date in br format' do
         expect(decorated.br_birth_date).to eq('01/01/2020')

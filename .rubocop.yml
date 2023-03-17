@@ -76,6 +76,15 @@ RSpec/NestedGroups:
 RSpec/ExampleLength:
   Enabled: false
 
+Style/RedundantFetchBlock:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
 RSpec/MessageSpies:
   Enabled: false
 

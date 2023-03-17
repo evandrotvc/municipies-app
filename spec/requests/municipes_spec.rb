@@ -51,8 +51,7 @@ RSpec.describe 'Municipies' do
     let(:request) { post municipes_path, params: { municipe: municipe_params } }
 
     context 'when municipe is valid' do
-      let!(:municipes) { Municipe.all }
-      it 'returns http ok and creates municipe' do
+      it 'creates municipe' do
         expect { request }.to change(Municipe, :count).by(1)
         expect(response).to have_http_status(:ok)
       end

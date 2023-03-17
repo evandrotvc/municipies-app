@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe MunicipeMailer do
   describe '#welcome' do
     let(:municipe) { create(:municipe) }
-    let(:mail) { described_class.with(municipe: municipe).welcome }
+    let(:mail) { described_class.with(municipe:).welcome }
 
     it 'renders the headers', :aggregate_failures do
       expect(mail.subject).to eq(I18n.t('activerecord.messages.municipe.create.success'))
@@ -17,7 +17,7 @@ RSpec.describe MunicipeMailer do
 
   describe '#info_changed' do
     let(:municipe) { create(:municipe) }
-    let(:mail) { described_class.with(municipe: municipe).info_changed }
+    let(:mail) { described_class.with(municipe:).info_changed }
 
     it 'renders the headers', :aggregate_failures do
       expect(mail.subject).to eq(I18n.t('activerecord.messages.municipe.update.success'))
